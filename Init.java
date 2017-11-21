@@ -6,7 +6,7 @@ public class Init {
 
 		Init.dispMenu();
 		int option, age, id, pid, did;
-		String name, sp, pname, dname;
+		String name, sp, pname, dname, roomno;
 		Person p;
 		int m = 9;
 		
@@ -71,22 +71,35 @@ public class Init {
 					break;
 				
 				case 6:
+					System.out.println("Enter Roomno ");
+					roomno = sc.next();
+					System.out.println("Enter patient name: ");
+					pname = sc.next();
+					BasicRoomToPatient.BasicRoomToPatient(roomno,pname);
+					Init.dispMenu();
+					break;
+
+				case 7:
 					for(int i = 0; i  < pcount; i++)
 						System.out.println(patientlist[i].id + "  " + patientlist[i].name + "  " + patientlist[i].age + "  " + patientlist[i].status);
 					Init.dispMenu();
 					break;
 
-				case 7:
+				case 8:
 					for(int i = 0; i  < dcount; i++)
 						System.out.println(doctorlist[i].id + "  " + doctorlist[i].name + "  " + doctorlist[i].age + "  " + doctorlist[i].sp + "  " + doctorlist[i].status + "  " + doctorlist[i].getExperience());
 					Init.dispMenu();
 					break;	
 
-				case 8:
+				case 9:
 					addPatientsToDoctor.doctor_patients();	
 					break;
+
+				case 10:
+					BasicRoomToPatient.room_patients();	
+					break;	
 					
-				case 9:
+				case 11:
 					break;
 				
 				default:
@@ -106,11 +119,12 @@ public class Init {
 		System.out.println("3. Add a doctor");
 		System.out.println("4. Remove a doctor");
 		System.out.println("5. Allot a doctor to an active patient");
-		System.out.println("6. View patients");
-		System.out.println("7. View doctors");
-		//System.out.println("8. find the doctor allotments");
-		System.out.println("8. See allotment");
-		System.out.println("9. Exit");
+		System.out.println("6. Allot a patient to an room");
+		System.out.println("7. View patients");
+		System.out.println("8. View doctors");
+		System.out.println("9. See allotment of doctors");
+		System.out.println("10. See allotment of rooms");
+		System.out.println("11. Exit");
 		System.out.println("#########################################");
 	}
 }
